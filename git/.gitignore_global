@@ -1,0 +1,12 @@
+# Intellij
+*.iml
+.idea/
+*.ipr
+*.iws
+
+# Vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+
+# Python
+env/
