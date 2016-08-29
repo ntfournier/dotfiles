@@ -9,6 +9,9 @@ stow -t ~ <folder>
 
 ## Applications
 
+### Git
+[so-fancy/diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
+
 ### Bash
 
 Some of the fonts and themes I use.
