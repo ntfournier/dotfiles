@@ -7,6 +7,15 @@ cd dotfiles
 stow -t ~ <folder>
 ```
 
+For Neovim
+
+```
+cd dotfiles
+stow -t ~/.config neovim
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
 ## Applications
 
 ### Git
@@ -23,8 +32,14 @@ Some of the fonts and themes I use.
 
 [Powerline-shell](https://github.com/banga/powerline-shell)
 
+[the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
+
 ### I3
 
 [i3-gaps](https://github.com/Airblader/i3)
 
 [i3blocks](https://github.com/vivien/i3blocks)
+
+### Neovim
+
+[vim-plug](https://github.com/junegunn/vim-plug)

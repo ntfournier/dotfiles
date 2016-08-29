@@ -150,18 +150,18 @@ bindsym XF86Sleep exec "gnome-screensaver-command -l"
 ## TODO
 
 ## F3 - Decrease keyboard brightness
-bindsym $mod+shift+F3 exec /home/ntfournier/.scripts/keyboard.sh down
-bindsym XF86KbdBrightnessDown exec /home/ntfournier/.scripts/keyboard.sh down
+bindsym $mod+shift+F3 exec /home/ntfournier/.scripts/keyboardBrightness.sh down
+bindsym XF86KbdBrightnessDown exec /home/ntfournier/.scripts/keyboardBrightness.sh down
 
 ## F4 - Increase keyboard brightness
-bindsym $mod+shift+F4 exec /home/ntfournier/.scripts/keyboard.sh up
-bindsym XF86KbdBrightnessUp exec /home/ntfournier/.scripts/keyboard.sh up
+bindsym $mod+shift+F4 exec /home/ntfournier/.scripts/keyboardBrightness.sh up
+bindsym XF86KbdBrightnessUp exec /home/ntfournier/.scripts/keyboardBrightness.sh up
 
 ## F5 - Decrease screen brightness
-bindsym XF86MonBrightnessDown exec /home/ntfournier/.scripts/screen.sh down
+bindsym XF86MonBrightnessDown exec /home/ntfournier/.scripts/screenBrightness.sh down
 
 ## F6 - Increase screen brightness
-bindsym XF86MonBrightnessUp exec /home/ntfournier/.scripts/screen.sh up
+bindsym XF86MonBrightnessUp exec /home/ntfournier/.scripts/screenBrightness.sh up
 
 ## F7 - Toggle internal/primary monitor
 ## TODO
@@ -173,16 +173,16 @@ bindsym XF86MonBrightnessUp exec /home/ntfournier/.scripts/screen.sh up
 ## TODO
 
 ## F10 - Toggle sound
-bindsym XF86AudioMute exec /home/ntfournier/.scripts/sound.sh toggle && pkill -SIGRTMIN+10 i3blocks
-bindsym $mod+shift+F10 exec /home/ntfournier/.scripts/sound.sh toggle && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioMute exec /home/ntfournier/.scripts/soundLevel.sh toggle && pkill -SIGRTMIN+10 i3blocks
+bindsym $mod+shift+F10 exec /home/ntfournier/.scripts/soundLevel.sh toggle && pkill -SIGRTMIN+10 i3blocks
 
 ## F11 - Decrease sound
-bindsym XF86AudioLowerVolume exec /home/ntfournier/.scripts/sound.sh down && pkill -SIGRTMIN+10 i3blocks
-bindsym $mod+shift+F11 exec /home/ntfournier/.scripts/sound.sh down && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec /home/ntfournier/.scripts/soundLevel.sh down && pkill -SIGRTMIN+10 i3blocks
+bindsym $mod+shift+F11 exec /home/ntfournier/.scripts/soundLevel.sh down && pkill -SIGRTMIN+10 i3blocks
 
 ## F12 - Increase sound
-bindsym XF86AudioRaiseVolume exec /home/ntfournier/.scripts/sound.sh up && pkill -SIGRTMIN+10 i3blocks
-bindsym $mod+shift+F12 exec /home/ntfournier/.scripts/sound.sh up && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec /home/ntfournier/.scripts/soundLevel.sh up && pkill -SIGRTMIN+10 i3blocks
+bindsym $mod+shift+F12 exec /home/ntfournier/.scripts/soundLevel.sh up && pkill -SIGRTMIN+10 i3blocks
 
 ## Keyboard layout
 bindsym $alt+c exec setxkbmap ca
