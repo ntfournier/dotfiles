@@ -7,6 +7,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'djoshea/vim-autoread'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'luochen1990/rainbow'
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 
 " Javascript
@@ -47,6 +48,7 @@ nnoremap <Leader>w :w<CR>
 
 " Easier buffer switch
 set hidden
+nnoremap gx :bd<CR>
 nnoremap gp :bp<CR>
 nnoremap gn :bn<CR>
 nnoremap gl :ls<CR>
@@ -73,9 +75,8 @@ nmap <F3> :setlocal spell! spelllang=en_us<CR>
 
 set pastetoggle=<F2>
 
-nnoremap <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <leader>ez :vsp ~/.zshrc<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>ev :e $VIMRC<CR>
+nnoremap <leader>sv :source $VIMRC<CR>
 
 " }}}
 " Text, tabulation and indent related {{{
@@ -122,6 +123,9 @@ nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+" }}}
+" Plugin: Incsearch {{{
+map <C-n> :NERDTreeToggle<CR>
 " }}}
 " Plugin: vim-airline {{{
 let g:airline_powerline_fonts = 1

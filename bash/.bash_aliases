@@ -43,6 +43,9 @@ export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 # http://daringfireball.net/projects/markdown/
 alias md='~/Applications/Markdown_1.0.1/Markdown.pl'
 
+## Neovim
+export VIMRC="/home/ntfournier/.config/nvim/init.vim"
+
 ## NVM
 export NVM_DIR="/home/ntfournier/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
