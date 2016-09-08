@@ -170,7 +170,7 @@ bindsym XF86MonBrightnessUp exec /home/ntfournier/.scripts/screenBrightness.sh u
 ## TODO
 
 ## F9 - Toggle trackpad
-## TODO
+bindsym $mod+shift+F9 exec /home/ntfournier/.scripts/toggleTouchpad.sh
 
 ## F10 - Toggle sound
 bindsym XF86AudioMute exec /home/ntfournier/.scripts/soundLevel.sh toggle && pkill -SIGRTMIN+10 i3blocks

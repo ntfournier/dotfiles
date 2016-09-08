@@ -29,7 +29,11 @@ export PATH=$PATH:/home/ntfournier/Applications/android-sdk-linux/platform-tools
 alias ai='sudo apt-get install'
 alias au='sudo apt-get update'
 
+## BSPWM
+export PATH=$PATH:/home/ntfournier/.config/bspwm
+
 ## IntelliJ Idea
+export PANEL_FONT="Ubuntu Mono, FontAwesome 10"
 export PATH=$PATH:/home/ntfournier/Applications/idea/bin
 
 ## Java
