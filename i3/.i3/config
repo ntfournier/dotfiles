@@ -203,8 +203,7 @@ client.unfocused $background $background $foreground $foreground
 client.urgent $background $background $background $foreground
 
 ## Configure border style
-new_window pixel 2
-new_float pixel 2
+for_window [class="^.*"] border pixel 8
 
 # bar
 # -----------------------------------------------------------------------------
@@ -212,14 +211,12 @@ bar {
 	status_command i3blocks
 }
 
-# Floating window
 for_window [instance="guake"] floating enable
-for_window [class="^.*"] border pixel 8
 
 # I3-gaps
 # -----------------------------------------------------------------------------
 
-smart_gaps on
+# smart_gaps on
 
-gaps inner 5
-gaps outer 2
+# gaps inner 5
+# gaps outer 2
