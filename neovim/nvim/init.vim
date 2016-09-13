@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 " Javascript
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " Navigation
 Plug 'ctrlpvim/ctrlp.vim'
@@ -73,9 +74,10 @@ nmap <F3> :setlocal spell! spelllang=en_us<CR>
 
 set pastetoggle=<F2>
 
-nnoremap <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <leader>ez :vsp ~/.zshrc<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>ev :e ~/.config/nvim/init.vim<CR>
+nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
+
+cnoremap w!! w !sudo tee > /dev/null %
 
 " }}}
 " Text, tabulation and indent related {{{
@@ -103,7 +105,7 @@ endif
 " Plugin: CtrlP {{{
 nnoremap <Leader>o :CtrlP<CR>
 
-let g:ctrlp_custom_ignore = 'dist\|node_modules\|bower_components\|.git\'
+let g:ctrlp_custom_ignore = 'dist\|build\|node_modules\|bower_components\|.git\'
 " }}}
 " Plugin: Git-gutter {{{
 let g:gitgutter_sign_column_always = 1
@@ -132,5 +134,8 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_theme='papercolor'
+" }}}
+" Plugin: vim-jsx {{{
+let g:jsx_ext_required = 0
 " }}}
 " vim:foldmethod=marker:foldlevel=0
