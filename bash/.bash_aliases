@@ -16,6 +16,9 @@ alias grep='grep --color=always'
 alias sl='ls'
 alias cd..='cd ..'
 
+# Helpers
+alias ..='cd ..'
+
 # Simple task to append to notify you
 # eg: make && callMe
 alias callMe='notify-send -u critical "Task done"'
@@ -60,3 +63,5 @@ if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+## Vim
+alias vim='vi'

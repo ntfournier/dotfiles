@@ -209,8 +209,7 @@ client.unfocused $background $background $foreground $foreground
 client.urgent $background $background $background $foreground
 
 ## Configure border style
-new_window pixel 2
-new_float pixel 2
+for_window [class="^.*"] border pixel 8
 
 # bar
 # -----------------------------------------------------------------------------
@@ -218,11 +217,7 @@ bar {
 	status_command i3blocks
 }
 
-# Floating window
 for_window [instance="guake"] floating enable
-for_window [title="Task[^s].*"] floating enable
-
-assign [class="Thunderbird"] $ws7
 
 # I3-gaps
 # -----------------------------------------------------------------------------
