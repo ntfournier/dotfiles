@@ -1,5 +1,7 @@
 TERM=xterm-256color
 
+export CONF=/home/ntfournier/Configs/dotfiles
+
 export EDITOR=/usr/bin/vim
 
 # Common Unix
@@ -32,6 +34,11 @@ export PATH=$PATH:/home/ntfournier/Applications/android-sdk-linux/platform-tools
 alias ai='sudo apt-get install'
 alias au='sudo apt-get update'
 
+## Bash
+alias sb='source ~/.bashrc'
+
+export ALIAS=~/.bash_aliases
+
 ## IntelliJ Idea
 export PATH=$PATH:/home/ntfournier/Applications/idea/bin
 
@@ -41,6 +48,9 @@ export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 ## Markdown
 # http://daringfireball.net/projects/markdown/
 alias md='~/Applications/Markdown_1.0.1/Markdown.pl'
+
+## Neovim
+export NEOVIMRC=~/.config/nvim/init.vim
 
 ## NVM
 export NVM_DIR="/home/ntfournier/.nvm"

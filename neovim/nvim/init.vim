@@ -74,8 +74,8 @@ nmap <F3> :setlocal spell! spelllang=en_us<CR>
 
 set pastetoggle=<F2>
 
-nnoremap <leader>ev :e ~/.config/nvim/init.vim<CR>
-nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
+nnoremap <leader>ev :e $NEOVIMRC<CR>
+nnoremap <leader>sv :source $NEOVIMRC<CR>
 
 cnoremap w!! w !sudo tee > /dev/null %
 
@@ -116,6 +116,8 @@ nmap <leader>[ <Plug>GitGutterPrevHunk
 
 nmap <Leader>ha <Plug>GitGutterStageHunk
 nmap <Leader>hu <Plug>GitGutterRevertHunk
+nmap <Leader>hr <Plug>GitGutterUndoHunk
+
 " }}}
 " Plugin: Incsearch {{{
 let g:incsearch#auto_nohlsearch = 1
