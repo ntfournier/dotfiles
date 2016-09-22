@@ -43,6 +43,8 @@ nmap k gk
 
 let mapleader = "\<Space>" " Remap leader to something easy to hit
 nnoremap <Leader>w :w<CR>
+
+set dictionary-=/usr/share/dict/american-english dictionary+=/usr/share/dict/american-english
 " }}}
 " Buffers {{{
 

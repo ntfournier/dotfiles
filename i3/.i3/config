@@ -21,8 +21,13 @@ exec dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec setxkbmap -option caps:escape
 exec xset r rate 200 15
 
+exec insync start
+
 ## Start dock applet
 exec nm-applet
+exec prime-indicator
+exec indicator-cpufreq
+exec classicmenu-indicator
 
 ## Guake
 exec guake
@@ -36,8 +41,8 @@ set $ws2 " 2     Code    "
 set $ws3 " 3     Web     "
 set $ws4 " 4     Folders "
 set $ws5 " 5         "
-set $ws6 " 6         "
-set $ws7 " 7         "
+set $ws6 " 6     Config  "
+set $ws7 " 7     Thunder "
 set $ws8 " 8     Reviews "
 set $ws9 " 9     Music   "
 
@@ -46,7 +51,7 @@ set $mod Mod4
 set $alt Mod1
 
 ## font
-font pango: Ubuntu Mono, FontAwesome 10
+font pango: Ubuntu Mono, FontAwesome 12
 
 # Key mapping
 # -----------------------------------------------------------------------------
@@ -191,6 +196,7 @@ bindsym $alt+x exec setxkbmap us
 #  Workspace setup
 # -----------------------------------------------------------------------------
 
+for_window [class="^.*"] border pixel 8
 ## Colors
 
 set $background #135462
@@ -214,12 +220,14 @@ bar {
 
 # Floating window
 for_window [instance="guake"] floating enable
-for_window [class="^.*"] border pixel 8
+for_window [title="Task[^s].*"] floating enable
+
+assign [class="Thunderbird"] $ws7
 
 # I3-gaps
 # -----------------------------------------------------------------------------
 
-smart_gaps on
+# smart_gaps on
 
-gaps inner 5
-gaps outer 2
+# gaps inner 5
+# gaps outer 2
