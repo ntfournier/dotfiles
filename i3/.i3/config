@@ -22,8 +22,13 @@ exec dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec setxkbmap -option caps:escape
 exec xset r rate 200 15
 
+exec insync start
+
 ## Start dock applet
 exec nm-applet
+exec prime-indicator
+exec indicator-cpufreq
+exec classicmenu-indicator
 
 ## Guake
 exec guake
@@ -37,8 +42,8 @@ set $ws2 " 2     Code    "
 set $ws3 " 3     Web     "
 set $ws4 " 4     Folders "
 set $ws5 " 5         "
-set $ws6 " 6         "
-set $ws7 " 7         "
+set $ws6 " 6     Config  "
+set $ws7 " 7     Thunder "
 set $ws8 " 8     Reviews "
 set $ws9 " 9     Music   "
 
@@ -172,7 +177,7 @@ bindsym XF86MonBrightnessUp exec /home/ntfournier/.scripts/screenBrightness.sh u
 ## TODO
 
 ## F9 - Toggle trackpad
-## TODO
+bindsym $mod+shift+F9 exec /home/ntfournier/.scripts/toggleTouchpad.sh
 
 ## F10 - Toggle sound
 bindsym XF86AudioMute exec /home/ntfournier/.scripts/soundLevel.sh toggle && pkill -SIGRTMIN+10 i3blocks
@@ -193,6 +198,7 @@ bindsym $alt+x exec setxkbmap us
 #  Workspace setup
 # -----------------------------------------------------------------------------
 
+for_window [class="^.*"] border pixel 8
 ## Colors
 
 set $background #073642

@@ -7,6 +7,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'djoshea/vim-autoread'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'luochen1990/rainbow'
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 
 " Javascript
@@ -43,11 +44,14 @@ nmap k gk
 
 let mapleader = "\<Space>" " Remap leader to something easy to hit
 nnoremap <Leader>w :w<CR>
+
+set dictionary-=/usr/share/dict/american-english dictionary+=/usr/share/dict/american-english
 " }}}
 " Buffers {{{
 
 " Easier buffer switch
 set hidden
+nnoremap gx :bd<CR>
 nnoremap gp :bp<CR>
 nnoremap gn :bn<CR>
 nnoremap gl :ls<CR>
@@ -74,8 +78,8 @@ nmap <F3> :setlocal spell! spelllang=en_us<CR>
 
 set pastetoggle=<F2>
 
-nnoremap <leader>ev :e $NEOVIMRC<CR>
-nnoremap <leader>sv :source $NEOVIMRC<CR>
+nnoremap <leader>ev :e $VIMRC<CR>
+nnoremap <leader>sv :source $VIMRC<CR>
 
 cnoremap w!! w !sudo tee > /dev/null %
 
@@ -126,6 +130,9 @@ nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+" }}}
+" Plugin: Incsearch {{{
+map <C-n> :NERDTreeToggle<CR>
 " }}}
 " Plugin: vim-airline {{{
 let g:airline_powerline_fonts = 1

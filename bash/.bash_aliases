@@ -39,7 +39,11 @@ alias sb='source ~/.bashrc'
 
 export ALIAS=~/.bash_aliases
 
+## BSPWM
+export PATH=$PATH:/home/ntfournier/.config/bspwm
+
 ## IntelliJ Idea
+export PANEL_FONT="Ubuntu Mono, FontAwesome 10"
 export PATH=$PATH:/home/ntfournier/Applications/idea/bin
 
 ## Java
@@ -50,7 +54,7 @@ export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 alias md='~/Applications/Markdown_1.0.1/Markdown.pl'
 
 ## Neovim
-export NEOVIMRC=~/.config/nvim/init.vim
+export VIMRC="/home/ntfournier/.config/nvim/init.vim"
 
 ## NVM
 export NVM_DIR="/home/ntfournier/.nvm"
