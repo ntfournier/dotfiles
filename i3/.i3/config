@@ -4,11 +4,11 @@
 # -----------------------------------------------------------------------------
 
 ## Shortcuts to open applications
-bindsym $mod+t exec firefox
-bindsym $mod+g exec google-chrome
-bindsym $mod+n exec nautilus --no-desktop
+bindsym $alt+t exec firefox
+bindsym $alt+g exec google-chrome
+bindsym $alt+n exec nautilus --no-desktop
 
-bindsym $mod+i exec /home/ntfournier/Applications/idea/bin/idea.sh
+bindsym $alt+i exec /home/ntfournier/Applications/idea/bin/idea.sh
 
 
 # Startup/Services
@@ -48,120 +48,122 @@ set $ws8 " 8     Reviews "
 set $ws9 " 9     Music   "
 
 ## Modifiers
-set $mod Mod4
 set $alt Mod1
+set $sup Mod4
 
 ## font
-font pango: Ubuntu Mono, FontAwesome 14
+font pango: Ubuntu Mono, FontAwesome 12
 
 # Key mapping
 # -----------------------------------------------------------------------------
 
-## Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+## Use Mouse+$alt to drag floating windows to their wanted position
+floating_modifier $alt
 
 ## start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $alt+Return exec gnome-terminal
 
 ## kill focused window
-bindsym $mod+Shift+q kill
+bindsym $alt+Shift+f kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run
+# bindsym $alt+d exec dmenu_run
+bindsym $alt+d exec rofi -show run
 
 ## change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $alt+h focus left
+bindsym $alt+j focus down
+bindsym $alt+k focus up
+bindsym $alt+l focus right
+bindsym $alt+Left focus left
+bindsym $alt+Down focus down
+bindsym $alt+Up focus up
+bindsym $alt+Right focus right
 
 ## move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $alt+Shift+h move left
+bindsym $alt+Shift+j move down
+bindsym $alt+Shift+k move up
+bindsym $alt+Shift+l move right
+bindsym $alt+Shift+Left move left
+bindsym $alt+Shift+Down move down
+bindsym $alt+Shift+Up move up
+bindsym $alt+Shift+Right move right
 
 ## split in horizontal orientation
-bindsym $mod+b split h
+bindsym $alt+b split h
 
 ## split in vertical orientation
-bindsym $mod+v split v
+bindsym $alt+v split v
 
 ## enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym $alt+f fullscreen
 
 ## change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $alt+s layout stacking
+bindsym $alt+w layout tabbed
+bindsym $alt+e layout toggle split
 
 ## toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $alt+Shift+space floating toggle
 
 ## change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $alt+space focus mode_toggle
 
 ## focus the parent container
-bindsym $mod+a focus parent
+bindsym $alt+a focus parent
 
 ## switch to workspace
-bindsym $mod+1 workspace $WS1
-bindsym $mod+2 workspace $WS2
-bindsym $mod+3 workspace $WS3
-bindsym $mod+4 workspace $WS4
-bindsym $mod+5 workspace $WS5
-bindsym $mod+6 workspace $WS6
-bindsym $mod+7 workspace $WS7
-bindsym $mod+8 workspace $WS8
-bindsym $mod+9 workspace $WS9
+bindsym $alt+1 workspace $WS1
+bindsym $alt+2 workspace $WS2
+bindsym $alt+3 workspace $WS3
+bindsym $alt+4 workspace $WS4
+bindsym $alt+5 workspace $WS5
+bindsym $alt+6 workspace $WS6
+bindsym $alt+7 workspace $WS7
+bindsym $alt+8 workspace $WS8
+bindsym $alt+9 workspace $WS9
 
 ## cycle through active workspaces
-bindsym $mod+period workspace next
-bindsym $mod+comma workspace prev
+bindsym $alt+period workspace next
+bindsym $alt+comma workspace prev
 
 ## move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $WS1
-bindsym $mod+Shift+2 move container to workspace $WS2
-bindsym $mod+Shift+3 move container to workspace $WS3
-bindsym $mod+Shift+4 move container to workspace $WS4
-bindsym $mod+Shift+5 move container to workspace $WS5
-bindsym $mod+Shift+6 move container to workspace $WS6
-bindsym $mod+Shift+7 move container to workspace $WS7
-bindsym $mod+Shift+8 move container to workspace $WS8
-bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $alt+Shift+1 move container to workspace $WS1
+bindsym $alt+Shift+2 move container to workspace $WS2
+bindsym $alt+Shift+3 move container to workspace $WS3
+bindsym $alt+Shift+4 move container to workspace $WS4
+bindsym $alt+Shift+5 move container to workspace $WS5
+bindsym $alt+Shift+6 move container to workspace $WS6
+bindsym $alt+Shift+7 move container to workspace $WS7
+bindsym $alt+Shift+8 move container to workspace $WS8
+bindsym $alt+Shift+9 move container to workspace $WS9
 
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+o exec "i3-nagbar -t warning -m 'Reboot?' -b 'Yes, reboot computer' 'sudo reboot'"
-bindsym $mod+Shift+p exec "i3-nagbar -t warning -m 'Power off?' -b 'Yes, power off' 'sudo shutdown now'"
+bindsym $alt+Shift+c reload
+bindsym $alt+Shift+r restart
+bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $alt+Shift+o exec "i3-nagbar -t warning -m 'Reboot?' -b 'Yes, reboot computer' 'sudo reboot'"
+bindsym $alt+Shift+p exec "i3-nagbar -t warning -m 'Power off?' -b 'Yes, power off' 'sudo shutdown now'"
 
 
 # Multimedia keys for laptop
 # -----------------------------------------------------------------------------
+# http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols
+# http://askubuntu.com/questions/347186/does-rhythmbox-have-any-command-line-interface-or-method-of-interprocess-communi
 
 ## F1 - Sleep
-bindsym $mod+shift+F1 exec "gnome-screensaver-command -l"
+bindsym $sup+shift+F1 exec "gnome-screensaver-command -l"
 bindsym XF86Sleep exec "gnome-screensaver-command -l"
 
 ## F2 - Toggle Wifi
 ## TODO
 
 ## F3 - Decrease keyboard brightness
-bindsym $mod+shift+F3 exec /home/ntfournier/.scripts/keyboardBrightness.sh down
+bindsym $sup+shift+F3 exec /home/ntfournier/.scripts/keyboardBrightness.sh down
 bindsym XF86KbdBrightnessDown exec /home/ntfournier/.scripts/keyboardBrightness.sh down
 
 ## F4 - Increase keyboard brightness
-bindsym $mod+shift+F4 exec /home/ntfournier/.scripts/keyboardBrightness.sh up
+bindsym $sup+shift+F4 exec /home/ntfournier/.scripts/keyboardBrightness.sh up
 bindsym XF86KbdBrightnessUp exec /home/ntfournier/.scripts/keyboardBrightness.sh up
 
 ## F5 - Decrease screen brightness
@@ -177,30 +179,46 @@ bindsym XF86MonBrightnessUp exec /home/ntfournier/.scripts/screenBrightness.sh u
 ## TODO
 
 ## F9 - Toggle trackpad
-bindsym $mod+shift+F9 exec /home/ntfournier/.scripts/toggleTouchpad.sh
+bindsym $sup+shift+F9 exec /home/ntfournier/.scripts/toggleTouchpad.sh
 
 ## F10 - Toggle sound
 bindsym XF86AudioMute exec /home/ntfournier/.scripts/soundLevel.sh toggle && pkill -SIGRTMIN+10 i3blocks
-bindsym $mod+shift+F10 exec /home/ntfournier/.scripts/soundLevel.sh toggle && pkill -SIGRTMIN+10 i3blocks
+bindsym $sup+shift+F10 exec /home/ntfournier/.scripts/soundLevel.sh toggle && pkill -SIGRTMIN+10 i3blocks
 
 ## F11 - Decrease sound
 bindsym XF86AudioLowerVolume exec /home/ntfournier/.scripts/soundLevel.sh down && pkill -SIGRTMIN+10 i3blocks
-bindsym $mod+shift+F11 exec /home/ntfournier/.scripts/soundLevel.sh down && pkill -SIGRTMIN+10 i3blocks
+bindsym $sup+shift+F11 exec /home/ntfournier/.scripts/soundLevel.sh down && pkill -SIGRTMIN+10 i3blocks
 
 ## F12 - Increase sound
 bindsym XF86AudioRaiseVolume exec /home/ntfournier/.scripts/soundLevel.sh up && pkill -SIGRTMIN+10 i3blocks
-bindsym $mod+shift+F12 exec /home/ntfournier/.scripts/soundLevel.sh up && pkill -SIGRTMIN+10 i3blocks
+bindsym $sup+shift+F12 exec /home/ntfournier/.scripts/soundLevel.sh up && pkill -SIGRTMIN+10 i3blocks
+
+## UP Arrow - Stop music
+bindsym XF86AudioPause exec rhythmbox-client --stop
+bindsym $sup+Shift+Up exec rhythmbox-client --stop
+
+## DOWN Arrow - Play/pause
+bindsym XF86AudioPlay exec rhythmbox-client --play-pause
+bindsym $sup+Shift+Down exec rhythmbox-client --play-pause
+
+## LEFT Arrow - Stop music
+bindsym XF86AudioPrev exec rhythmbox-client --previous
+bindsym $sup+Shift+Left exec rhythmbox-client --previous
+
+## RIGHT Arrow - Stop music
+bindsym XF86AudioNext exec rhythmbox-client --next
+bindsym $sup+Shift+Right exec rhythmbox-client --next
 
 ## Keyboard layout
-bindsym $alt+c exec setxkbmap ca
-bindsym $alt+x exec setxkbmap us
+bindsym $sup+c exec setxkbmap ca
+bindsym $sup+x exec setxkbmap us
 
 #  Workspace setup
 # -----------------------------------------------------------------------------
 
-for_window [class="^.*"] border pixel 8
-## Colors
+for_window [class="^.*"] border pixel 3
 
+## Colors
 set $background #073642
 set $foreground #93A1A1
 set $dominant #DCDFB9
@@ -211,7 +229,7 @@ client.unfocused $background $background $foreground $foreground
 client.urgent $background $background $background $foreground
 
 ## Configure border style
-for_window [class="^.*"] border pixel 8
+for_window [class="^.*"] border pixel 3
 
 # bar
 # -----------------------------------------------------------------------------
