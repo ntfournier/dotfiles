@@ -72,5 +72,8 @@ if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+## xcalib
+alias night='xcalib -invert -alter'
+
 ## Vim
 alias vim='vi'
