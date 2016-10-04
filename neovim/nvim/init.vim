@@ -52,8 +52,16 @@ set dictionary-=/usr/share/dict/american-english dictionary+=/usr/share/dict/ame
 " Easier buffer switch
 set hidden
 nnoremap gx :bd<CR>
+
+nnoremap gt :bn<CR>
+nnoremap gT :bp<CR>
+
 nnoremap gp :bp<CR>
 nnoremap gn :bn<CR>
+
+nnoremap <C-S-tab> :bp<CR>
+nnoremap <C-tab> :bn<CR>
+
 nnoremap gl :ls<CR>
 nnoremap gb :ls<CR>:b
 

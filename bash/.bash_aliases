@@ -28,7 +28,7 @@ alias callMe='notify-send -u critical "Task done"'
 # Applications
 ## Android SDK
 export ANDROID_HOME="/home/ntfournier/Applications/android-sdk-linux/"
-export PATH=$PATH:/home/ntfournier/Applications/android-sdk-linux/platform-tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 
 ## Apt
 alias ai='sudo apt-get install'
@@ -77,3 +77,8 @@ alias night='xcalib -invert -alter'
 
 ## Vim
 alias vim='vi'
+
+
+
+# Projects
+alias cd-rn='cd /home/ntfournier/Projects/Red-Nickel'
