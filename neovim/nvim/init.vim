@@ -10,6 +10,9 @@ Plug 'luochen1990/rainbow'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 
+" HTML
+Plug 'mattn/emmet-vim'
+
 " Javascript
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'

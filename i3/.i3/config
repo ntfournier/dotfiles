@@ -9,6 +9,8 @@ bindsym $sup+t exec firefox
 bindsym $sup+g exec google-chrome
 bindsym $sup+Shift+g exec google-chrome --incognito
 
+bindsym $sup+y exec gitkraken
+
 bindsym $sup+n exec nautilus --no-desktop
 
 bindsym $sup+i exec /home/ntfournier/Applications/idea/bin/idea.sh
@@ -22,6 +24,7 @@ exec gnome-settings-daemon
 exec dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec gsettings set org.nemo.desktop show-desktop-icons false
 exec feh --bg-scale /home/ntfournier/Configs/dotfiles/wall/GNUWall.png
+exec compton --config ~/.config/compton.conf
 
 ## Set keyboard
 exec setxkbmap -option caps:escape
@@ -151,6 +154,26 @@ bindsym $sup+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -b 'Yes, exit i3' 
 bindsym $sup+Shift+o exec "i3-nagbar -t warning -m 'Reboot?' -b 'Yes, reboot computer' 'sudo reboot'"
 bindsym $sup+Shift+p exec "i3-nagbar -t warning -m 'Power off?' -b 'Yes, power off' 'sudo shutdown now'"
 
+
+# Resize mode
+# -----------------------------------------------------------------------------
+bindsym $sup+r mode "resize"
+mode "resize" {
+        bindcode 44 resize shrink width 4 px or 4 ppt
+        bindcode 45 resize grow height 4 px or 4 ppt
+        bindcode 46 resize shrink height 4 px or 4 ppt
+        bindcode 47 resize grow width 4 px or 4 ppt
+
+        # same bindings, but for the arrow keys
+        bindcode 113 resize shrink width 4 px or 4 ppt
+        bindcode 116 resize grow height 4 px or 4 ppt
+        bindcode 111 resize shrink height 4 px or 4 ppt
+        bindcode 114 resize grow width 4 px or 4 ppt
+
+        # back to normal: Enter or Escape
+        bindcode 36 mode "default"
+        bindcode 9 mode "default"
+}
 
 # Multimedia keys for laptop
 # -----------------------------------------------------------------------------
