@@ -75,5 +75,8 @@ fi
 ## xcalib
 alias night='xcalib -invert -alter'
 
+## xrandr
+# xrandr --output VGA1 --same-as LVDS1
+
 ## Vim
 alias vim='vi'

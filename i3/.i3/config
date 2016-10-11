@@ -158,8 +158,8 @@ bindsym $alt+Shift+p exec "i3-nagbar -t warning -m 'Power off?' -b 'Yes, power o
 # http://askubuntu.com/questions/347186/does-rhythmbox-have-any-command-line-interface-or-method-of-interprocess-communi
 
 ## F1 - Sleep
-bindsym $sup+shift+F1 exec "gnome-screensaver-command -l"
-bindsym XF86Sleep exec "gnome-screensaver-command -l"
+bindsym $sup+shift+F1 exec "i3lock"
+bindsym XF86Sleep exec "i3lock"
 
 ## F2 - Toggle Wifi
 ## TODO
