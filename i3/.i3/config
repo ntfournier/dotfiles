@@ -246,17 +246,21 @@ bindsym $alt+x exec setxkbmap us
 # -----------------------------------------------------------------------------
 
 ## Colors
-set $background #073642
-set $foreground #FFA500
-set $dominant #DCDFB9
+set $primary #2ca0dd
+set $secondary #d2d2d2
 
-client.focused $foreground $foreground $background $foreground
-client.focused_inactive $background $background $foreground $background
-client.unfocused $background $background $foreground $foreground
-client.urgent $background $background $background $foreground
+client.focused $primary $primary #ffffff $secondary
+client.focused_inactive #c6c6c6 #c6c6c6 #888888 #292d2e
+client.unfocused $secondary $secondary #999999 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000
 
 ## Configure border style
 for_window [class="^.*"] border pixel 3
+
+assign [title="GitKraken"] $ws8
+assign [title="Rhythmbox"] $ws9
+
+for_window [title="^VLC media player$" window_role="vlc-video"] move to workspace $ws5
 
 # bar
 # -----------------------------------------------------------------------------
@@ -264,13 +268,13 @@ bar {
 	position top
 	status_command i3blocks
 	colors {
-		separator #268bd2
-		background #002b36
-		statusline #839496
-		focused_workspace #93A1A1 #93A1A1 #fdf6e3
-		active_workspace #fdf6e3 #6c71c4 #fdf6e3
-		inactive_workspace #002b36 #586e75 #002b36
-		urgent_workspace #d33682 #d33682 #fdf6e3
+		separator #515151
+		background $secondary
+		statusline #cccccc
+		focused_workspace #2CA0DD #2CA0DD #000000
+		active_workspace $primary $primary #ffffff
+		inactive_workspace $secondary $secondary #555555
+		urgent_workspace #f2777a #f2777a #ffffff
 	}
 }
 
