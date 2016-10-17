@@ -1,0 +1,2 @@
+ntfournier ALL=NOPASSWD: /usr/bin/tee /sys/class/leds/asus\:\:kbd_backlight/brightness
+ntfournier ALL=NOPASSWD: /usr/bin/tee /sys/class/backlight/intel_backlight/brightness

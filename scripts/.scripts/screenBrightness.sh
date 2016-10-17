@@ -11,7 +11,7 @@ if [ $1 = "down" ] ; then
 fi
 
 if [ $1 = "up" ] ; then
-  if [ $curr -lt "900" ] ; then
+  if [ $curr -lt "1500" ] ; then
     up=$(( $curr+100 ))
     sudo tee /sys/class/backlight/intel_backlight/brightness <<< $up
   else

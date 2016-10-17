@@ -245,8 +245,6 @@ bindsym $alt+x exec setxkbmap us
 #  Workspace setup
 # -----------------------------------------------------------------------------
 
-for_window [class="^.*"] border pixel 3
-
 ## Colors
 set $background #073642
 set $foreground #FFA500
