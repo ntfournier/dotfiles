@@ -1,7 +1,5 @@
 TERM=xterm-256color
 
-export CONF=/home/ntfournier/Configs/dotfiles
-
 export EDITOR=/usr/bin/vim
 
 # Common Unix
@@ -39,49 +37,20 @@ alias sb='source ~/.bashrc'
 
 export ALIAS=~/.bash_aliases
 
-## BSPWM
-export PATH=$PATH:/home/ntfournier/.config/bspwm
-
-## IntelliJ Idea
-export PATH=$PATH:/home/ntfournier/Applications/idea/bin
+## Gradle
+export GRADLE_HOME="/home/ntfournier/Applications/gradle-3.2.1/"
+export PATH=$PATH:$GRADLE_HOME/bin
 
 ## Java
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 
-## Markdown
-# http://daringfireball.net/projects/markdown/
-alias md='~/Applications/Markdown_1.0.1/Markdown.pl'
-
 ## Nautilus
 alias nau='nautilus --no-desktop ./ &'
-
-## Neovim
-export VIMRC="/home/ntfournier/.config/nvim/init.vim"
 
 ## NVM
 export NVM_DIR="/home/ntfournier/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-nvm use v6.1.0 > /dev/null
-
-## Powerline-shell
-function _update_ps1() {
-    PS1="$(~/powerline-shell.py $? 2> /dev/null)"
-}
-
-if [ "$TERM" != "linux" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
+nvm use v6.1.0 > /dev/null &
 
 ## xcalib
 alias night='xcalib -invert -alter'
-
-## xrandr
-# xrandr --output VGA1 --same-as LVDS1
-
-## Vim
-alias vim='vi'
-
-
-
-# Projects
-alias cd-rn='cd /home/ntfournier/Projects/Red-Nickel'
