@@ -41,6 +41,12 @@ export ALIAS=~/.bash_aliases
 export GRADLE_HOME="/home/ntfournier/Applications/gradle-3.2.1/"
 export PATH=$PATH:$GRADLE_HOME/bin
 
+## Chrome
+export PATH=$PATH:/home/ntfournier/Applications/depot_tools
+
+## IntelliJ Idea
+export PATH=$PATH:/home/ntfournier/Applications/idea/bin
+
 ## Java
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 

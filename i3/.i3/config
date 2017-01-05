@@ -6,7 +6,7 @@
 ## Shortcuts to open applications
 bindsym $sup+t exec firefox
 
-bindsym $sup+g exec google-chrome
+bindsym $sup+g exec chromium-browser
 bindsym $sup+Shift+g exec google-chrome --incognito
 
 bindsym $sup+y exec gitkraken
@@ -23,20 +23,20 @@ bindsym $sup+i exec /home/ntfournier/Applications/idea/bin/idea.sh
 exec gnome-settings-daemon
 exec dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec gsettings set org.nemo.desktop show-desktop-icons false
-exec feh --bg-scale /home/ntfournier/Configs/dotfiles/wall/GNUWall.png
+# exec feh --bg-scale /home/ntfournier/Configs/dotfiles/wall/GNUWall.png
 exec compton --config ~/.config/compton.conf
 
 ## Set keyboard
 exec setxkbmap -option caps:escape
 exec xset r rate 200 15
 
-exec insync start
+# exec insync start
 
 ## Start dock applet
 exec nm-applet
-exec prime-indicator
-exec indicator-cpufreq
-exec classicmenu-indicator
+# exec prime-indicator
+# exec indicator-cpufreq
+# exec classicmenu-indicator
 
 ## Guake
 exec guake
@@ -45,15 +45,15 @@ exec guake
 # -----------------------------------------------------------------------------
 
 ## Workspace names
-set $ws1 " 1     Linux   "
-set $ws2 " 2     Code    "
-set $ws3 " 3     Web     "
-set $ws4 " 4     Folders "
-set $ws5 " 5         "
-set $ws6 " 6     Config  "
-set $ws7 " 7     Thunder "
-set $ws8 " 8     Reviews "
-set $ws9 " 9     Music   "
+set $ws1 " 1   Linux   "
+set $ws2 " 2   Code    "
+set $ws3 " 3   Web     "
+set $ws4 " 4   Folders "
+set $ws5 " 5           "
+set $ws6 " 6   Config  "
+set $ws7 " 7   Thunder "
+set $ws8 " 8   Reviews "
+set $ws9 " 9   Music   "
 
 ## Modifiers
 set $alt Mod1
@@ -76,8 +76,8 @@ bindsym $sup+Shift+q kill
 bindsym $sup+Shift+f kill
 
 # start dmenu (a program launcher)
-# bindsym $sup+d exec dmenu_run
-bindsym $sup+d exec rofi -show run
+bindsym $sup+d exec dmenu_run
+# bindsym $sup+d exec rofi -show run
 
 ## change focus
 bindsym $sup+h focus left
@@ -279,9 +279,10 @@ bar {
 }
 
 for_window [instance="guake"] floating enable
+for_window [instance="shutter"] floating enable
+for_window [instance="WobblyBreakout"] floating enable
 
 # xprop |awk '/WM_CLASS/{print $4}'
-for_window [instance="RedNickel"] floating enable
 
 
 # I3-gaps

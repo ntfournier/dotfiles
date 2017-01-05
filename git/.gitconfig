@@ -11,7 +11,8 @@
 	r = reset --hard HEAD
 	s = status
 [core]
-	autocrlf = input
+	autocrlf = false
+	filemode = false
 	editor = vi
 	excludesfile = ~/.gitignore_global
 	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
