@@ -1,5 +1,12 @@
 TERM=xterm-256color
 
+PSC="\e[36m"
+if [ $HOSTNAME = "ubuntu-512mb-tor1-01" ]; then
+	PSC="\e[1;33m"
+fi
+
+PS1="\[${PSC}\]\u@\h(\l) \[\e[37m\][ \w ]\[\e[00m\]\[\e[1m\] \$ "
+
 export EDITOR=/usr/bin/vim
 
 # Common Unix
@@ -55,8 +62,7 @@ alias nau='nautilus --no-desktop ./ &'
 
 ## NVM
 export NVM_DIR="/home/ntfournier/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-nvm use v6.1.0 > /dev/null &
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" &&
 
 ## xcalib
 alias night='xcalib -invert -alter'
