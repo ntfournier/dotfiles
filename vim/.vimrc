@@ -93,6 +93,8 @@ nmap <leader>q :nohlsearch<CR>
 " }}}
 " Shortcuts {{{
 
+map <C-s> :w<CR>
+
 " Toggle spell check
 nmap <F3> :setlocal spell! spelllang=en_us<CR>
 

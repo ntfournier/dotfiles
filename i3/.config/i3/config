@@ -24,6 +24,7 @@ exec gnome-settings-daemon
 exec dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec gsettings set org.nemo.desktop show-desktop-icons false
 exec compton --config ~/.config/compton/compton.conf
+exec stty -ixon
 
 ## Set keyboard
 exec setxkbmap -option caps:escape
@@ -223,19 +224,15 @@ bindsym $alt+shift+F12 exec /home/ntfournier/.scripts/soundLevel.sh up && pkill 
 
 ## UP Arrow - Stop music
 bindsym XF86AudioPause exec rhythmbox-client --stop
-bindsym $alt+Shift+Up exec rhythmbox-client --stop
 
 ## DOWN Arrow - Play/pause
 bindsym XF86AudioPlay exec rhythmbox-client --play-pause
-bindsym $alt+Shift+Down exec rhythmbox-client --play-pause
 
 ## LEFT Arrow - Stop music
 bindsym XF86AudioPrev exec rhythmbox-client --previous
-bindsym $alt+Shift+Left exec rhythmbox-client --previous
 
 ## RIGHT Arrow - Stop music
 bindsym XF86AudioNext exec rhythmbox-client --next
-bindsym $alt+Shift+Right exec rhythmbox-client --next
 
 ## Keyboard layout
 bindsym $alt+c exec setxkbmap ca
@@ -248,13 +245,13 @@ bindsym $alt+x exec setxkbmap us
 set $primary #2ca0dd
 set $secondary #d2d2d2
 
-client.focused $primary $primary #ffffff $secondary
+client.focused #ff0000 #ff5050 #ffffff $secondary
 client.focused_inactive #c6c6c6 #c6c6c6 #888888 #292d2e
 client.unfocused $secondary $secondary #999999 #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
 
 ## Configure border style
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 2
 
 assign [title="GitKraken"] $ws8
 assign [title="Rhythmbox"] $ws9
@@ -265,7 +262,7 @@ for_window [title="^VLC media player$" window_role="vlc-video"] move to workspac
 # -----------------------------------------------------------------------------
 bar {
 	position top
-	status_command i3status
+	status_command i3blocks
         colors {
                 background #000000
                 statusline #00A5FF #that neon blue

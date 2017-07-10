@@ -1,0 +1,32 @@
+{
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-b>": false,
+        "<C-c>": false,
+        "<C-k>": false,
+        "<C-v>": false
+    },
+    "typescript.check.npmIsInstalled": false,
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Monokai",
+    "files.autoSave": "onFocusChange",
+    "terminal.integrated.shellArgs.linux": [
+        "-l"
+    ],
+    "search.useIgnoreFilesByDefault": true,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/__snapshots__/": true
+    },
+    "editor.minimap.enabled": false,
+    "workbench.activityBar.visible": false,
+    "files.trimTrailingWhitespace": true,
+    "editor.glyphMargin": true,
+    "editor.folding": true,
+    "editor.fontSize": 13,
+    "workbench.colorCustomizations": {
+        "debugToolBar.background": "#d3d3ff"
+    }
+}

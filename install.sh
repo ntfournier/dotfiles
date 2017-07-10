@@ -4,3 +4,4 @@ stow -t ~ git
 stow -t ~ guake
 stow -t ~ i3
 stow -t ~ vim
+stow -t ~ vscode

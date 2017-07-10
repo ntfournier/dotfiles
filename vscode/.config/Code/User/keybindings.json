@@ -1,0 +1,24 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "F4",
+        "command": "toggle",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "zen",
+            "overrideWorkspaceSettings": true,
+            "value": [
+                {
+                    "editor.glyphMargin": true,
+                    "editor.lineNumbers": true,
+                    "editor.folding": true
+                },
+                {
+                    "editor.glyphMargin": false,
+                    "editor.lineNumbers": false,
+                    "editor.folding": false
+                }
+            ]
+        }
+    }
+]

@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <gconf>
-	<entry name="style" mtime="1499285767" type="string">
-		<stringvalue>Monospace 10</stringvalue>
+	<entry name="style" mtime="1499688317" type="string">
+		<stringvalue>Anonymous Pro for Powerline 12</stringvalue>
 	</entry>
-	<entry name="palette_name" mtime="1499285744" type="string">
+	<entry name="palette_name" mtime="1499688304" type="string">
 		<stringvalue>Seti</stringvalue>
 	</entry>
-	<entry name="palette" mtime="1499285744" type="string">
+	<entry name="palette" mtime="1499688304" type="string">
 		<stringvalue>#323232323232:#C2C228283232:#8E8EC4C43D3D:#E0E0C6C64F4F:#4343A5A5D5D5:#8B8B5757B5B5:#8E8EC4C43D3D:#EEEEEEEEEEEE:#323232323232:#C2C228283232:#8E8EC4C43D3D:#E0E0C6C64F4F:#4343A5A5D5D5:#8B8B5757B5B5:#8E8EC4C43D3D:#FFFFFFFFFFFF:#CACACECECDCD:#111112121313</stringvalue>
 	</entry>
-	<entry name="allow_bold" mtime="1499285744" type="bool" value="true"/>
+	<entry name="allow_bold" mtime="1499688304" type="bool" value="true"/>
 </gconf>
