@@ -8,7 +8,7 @@
         "<C-v>": false
     },
     "typescript.check.npmIsInstalled": false,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "workbench.colorTheme": "Monokai",
     "files.autoSave": "onFocusChange",
     "terminal.integrated.shellArgs.linux": [
@@ -28,5 +28,6 @@
     "editor.fontSize": 13,
     "workbench.colorCustomizations": {
         "debugToolBar.background": "#d3d3ff"
-    }
+    },
+    "python.linting.enabledWithoutWorkspace": false
 }
