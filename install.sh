@@ -23,7 +23,6 @@ MINGW*)
 	ln vim/.vimrc ~
 	ln vscode/.config/Code/User/settings.json $APPDATA/Code/User/
 	ln vscode/.config/Code/User/keybindings.json $APPDATA/Code/User/
-
 	ln autohotkey/default.ahk $APPDATA/Microsoft/Windows/Start\ Menu/Programs/Startup/
 	;;
 esac
