@@ -15,4 +15,4 @@
 	filemode = false
 	editor = vi
 	excludesfile = ~/.config/git/gitignore_global
-	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
+	pager = diff-so-fancy | less --tabs=1,5 -R

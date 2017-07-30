@@ -120,8 +120,10 @@ syntax enable           " Enable syntax highlighting
 set number              " Display line number
 set cursorline
 
-colorscheme PaperColor
-execute "set colorcolumn=" . join(range(81,110), ',')
+" colorscheme PaperColor
+colorscheme elflord
+set background=dark
+" execute "set colorcolumn=" . join(range(81,110), ',')
 " }}}
 " Pluginin: ack.vim {{{
 if executable('ag')

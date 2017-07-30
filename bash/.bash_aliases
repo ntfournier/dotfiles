@@ -1,6 +1,13 @@
 TERM=xterm-256color
 
-PS1="\[${PSC}\]\u@\h(\l) \[\e[37m\][ \w ]\[\e[00m\]\[\e[1m\] \$ "
+# Fixing folder colors on Bash on Ubuntu on Windows
+[ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || 
+    eval $(dircolors -b)
+
+# Set display for Windows
+export DISPLAY=:0
+
+export PS1="\u@\h:\w\\$ "
 
 export EDITOR=/usr/bin/vim
 
@@ -52,9 +59,14 @@ alias sb='source ~/.bashrc'
 
 export ALIAS=~/.bash_aliases
 
+## Diff-highlight
+export PATH=~/bin:$PATH
 
 ## Nautilus
 alias nau='nautilus --no-desktop ./ &'
+
+## NPM
+export PATH=~/.npm-global/bin:$PATH
 
 ## xcalib
 alias night='xcalib -invert -alter'
