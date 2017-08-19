@@ -10,3 +10,15 @@
 
 # Python
 env/
+venv/
+
+wallaby.js
+
+.vscode/
+
+# Nuance
+black/
+tmp/
+myApp/
+
+*.zip/

@@ -3,41 +3,6 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
-" Editor features
-Plugin 'airblade/vim-gitgutter'
-Plugin 'djoshea/vim-autoread'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'luochen1990/rainbow'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-commentary'
-
-" HTML
-Plugin 'mattn/emmet-vim'
-
-" Javascript
-Plugin 'moll/vim-node'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-
-" Navigation
-Plugin 'ctrlpvim/ctrlp.vim'
-
-" Search
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'mileszs/ack.vim'
-
-" Themes
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'godlygeek/csapprox'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-call vundle#end()
 filetype plugin indent on
 " }}}
 " General {{{
@@ -122,7 +87,7 @@ set cursorline
 
 " colorscheme PaperColor
 colorscheme elflord
-set background=dark
+" set background=dark
 " execute "set colorcolumn=" . join(range(81,110), ',')
 " }}}
 " Pluginin: ack.vim {{{

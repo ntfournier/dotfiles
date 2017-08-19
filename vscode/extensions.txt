@@ -1,0 +1,13 @@
+2gua.rainbow-brackets
+codezombiech.gitignore
+DavidAnson.vscode-markdownlint
+dbaeumer.jshint
+dbaeumer.vscode-eslint
+donjayamanne.python
+eg2.vscode-npm-script
+formulahendry.code-runner
+PeterJausovec.vscode-docker
+rebornix.toggle
+tht13.python
+vscodevim.vim
+waderyan.gitblame
