@@ -4,7 +4,14 @@ TERM=xterm-256color
 [ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) ||
     eval $(dircolors -b)
 
-# export PS1="\n\u@\h:\w\\$ \n"
+#export PS1="\n\u@\h:\w\\$ \n"
+
+## Preserve history
+export HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+
+# After each command reread history (not sure if useful or annoying)
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 export EDITOR=/usr/bin/vim
 
@@ -70,6 +77,9 @@ export ALIAS=~/.bash_aliases
 
 alias bolt='winpty docker exec -it bolt-postgres psql bolt boltwebapp'
 
+## Dev-tools
+export DEV_TOOLS=~/Projects/dev-tools/
+export PATH=$DEV_TOOLS:$PATH
 
 ## Docker
 # Fix this bug https://github.com/moby/moby/issues/24029
@@ -86,7 +96,7 @@ function d() {
 		docker rm $(docker ps -qa --no-trunc --filter "status=exited")
 		;;
 	p|psl)
-		docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}" | alt
+		docker ps --format "table {{.ID}}\t{{.Names}}\t{{with join (split (printf \"%s\" .Ports) \"0.0.0.0:\") \"\"}}{{join (split . \"/tcp\") \"\"}}{{end}}\t{{.Status}}" | alt
 		;;
 	psa)
 		docker ps -a | alt
@@ -109,6 +119,9 @@ function docker_winpty() {
 
 function dc() {
 	case $1 in
+	b)
+		docker-compose build
+		;;
 	u)
 		docker-compose up -d
 		;;
@@ -129,6 +142,13 @@ alias docker-compose='dc'
 ## Diff-highlight
 export PATH=~/bin:$PATH
 
+## Kubernetes
+export PATH=~/Applications/:$PATH
+alias k='kubectl.exe'
+
+## Maven
+export PATH=~/Applications/maven/bin/:$PATH
+
 ## Nautilus
 alias nau='nautilus --no-desktop ./ &'
 
@@ -136,8 +156,12 @@ alias nau='nautilus --no-desktop ./ &'
 export PATH=~/.npm-global/bin:$PATH
 
 ## Python
-export PATH=$PATH:/c/Program\ Files/Python27/python.exe
+export PATH=$PATH:/c/Program\ Files/Python36/
+alias python='winpty python.exe'
+alias python3='winpty python.exe'
 
 ## xcalib
 alias night='xcalib -invert -alter'
 
+## Go
+export PATH=/c/Go/bin:$PATH

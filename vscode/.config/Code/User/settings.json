@@ -5,6 +5,7 @@
         "<C-b>": false,
         "<C-c>": false,
         "<C-e>": false,
+        "<C-f>": false,
         "<C-h>": false,
         "<C-k>": false,
         "<C-t>": false,
@@ -12,8 +13,8 @@
         "<C-x>": false
     },
     "typescript.check.npmIsInstalled": false,
-    "window.zoomLevel": 0,
-    "workbench.colorTheme": "Monokai",
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Visual Studio Light",
     "files.autoSave": "onFocusChange",
     "terminal.integrated.shellArgs.linux": [
         "-l"
@@ -29,11 +30,13 @@
     "files.trimTrailingWhitespace": true,
     "editor.glyphMargin": true,
     "editor.folding": true,
-    "editor.fontSize": 13,
+    "editor.fontSize": 12,
     "python.linting.enabledWithoutWorkspace": false,
-    "python.pythonPath": "/c/Users/vincent.fournier/venv/Scripts/python",
+    "python.pythonPath": "C:\\Users\\vincent.fournier\\venv\\Scripts\\python",
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     // "editor.fontLigatures": true,
-    "editor.fontFamily": "Fira Code",
-    "extensions.ignoreRecommendations": true
+    "editor.fontFamily": "Source Code Pro",
+    "extensions.ignoreRecommendations": true,
+    "workbench.iconTheme": "vscode-icons",
+    "java.errors.incompleteClasspath.severity": "ignore"
 }
