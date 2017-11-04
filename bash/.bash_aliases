@@ -1,11 +1,3 @@
-TERM=xterm-256color
-
-# Fixing folder colors on Bash on Ubuntu on Windows
-[ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) ||
-    eval $(dircolors -b)
-
-#export PS1="\n\u@\h:\w\\$ \n"
-
 ## Preserve history
 export HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
@@ -67,19 +59,13 @@ function alt() {
 
 
 ## Apt
-alias ai='sudo apt-get install'
-alias au='sudo apt-get update && sudo apt-get upgrade'
+alias ai='sudo apt install'
+alias au='sudo apt update && sudo apt upgrade'
 
 ## Bash
 alias sb='source ~/.bashrc'
 
-export ALIAS=~/.bash_aliases
-
 alias bolt='winpty docker exec -it bolt-postgres psql bolt boltwebapp'
-
-## Dev-tools
-export DEV_TOOLS=~/Projects/dev-tools/
-export PATH=$DEV_TOOLS:$PATH
 
 ## Docker
 # Fix this bug https://github.com/moby/moby/issues/24029
@@ -102,19 +88,15 @@ function d() {
 		docker ps -a | alt
 		;;
 	e)
-		docker_winpty exec -it "${@:2}"
+		docker exec -it "${@:2}"
 		;;
 	eb)
-		docker_winpty exec -it "${@:2}" //bin/bash
+		docker exec -it "${@:2}" //bin/bash
 		;;
 	*)
-		MSYS_NO_PATHCONV=1 /c/Program\ Files/Docker/Docker/Resources/bin/docker.exe "$@"
+		docker "$@"
 		;;
 	esac
-}
-
-function docker_winpty() {
-	MSYS_NO_PATHCONV=1 winpty /c/Program\ Files/Docker/Docker/Resources/bin/docker.exe "$@"
 }
 
 function dc() {
@@ -132,15 +114,10 @@ function dc() {
 		docker-compose up
 		;;
 	*)
-		MSYS_NO_PATHCONV=1 /c/Program\ Files/Docker/Docker/Resources/bin/docker-compose.exe $@
+		docker-compose "$@"
 		;;
 	esac
 }
-
-alias docker-compose='dc'
-
-## Diff-highlight
-export PATH=~/bin:$PATH
 
 ## Kubernetes
 export PATH=~/Applications/:$PATH
@@ -156,12 +133,10 @@ alias nau='nautilus --no-desktop ./ &'
 export PATH=~/.npm-global/bin:$PATH
 
 ## Python
-export PATH=$PATH:/c/Program\ Files/Python36/
-alias python='winpty python.exe'
-alias python3='winpty python.exe'
+alias sp3='source ~/.py36/bin/activate'
+alias sve='source ./venv/bin/activate'
+sp3
 
-## xcalib
-alias night='xcalib -invert -alter'
+## Vim
+export VIMRC=~/.vimrc
 
-## Go
-export PATH=/c/Go/bin:$PATH

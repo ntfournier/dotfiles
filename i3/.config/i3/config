@@ -6,8 +6,7 @@
 ## Shortcuts to open applications
 bindsym $sup+t exec firefox
 
-bindsym $sup+g exec chromium-browser
-bindsym $sup+Shift+g exec google-chrome --incognito
+bindsym $sup+g exec google-chrome
 
 bindsym $sup+y exec gitkraken
 
@@ -20,11 +19,7 @@ bindsym $sup+i exec /home/ntfournier/Applications/idea/bin/idea.sh
 # -----------------------------------------------------------------------------
 
 ## Start gnome daemon for better DM management
-exec gnome-settings-daemon
-exec dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec gsettings set org.nemo.desktop show-desktop-icons false
-exec compton --config ~/.config/compton/compton.conf
-exec stty -ixon
 
 ## Set keyboard
 exec setxkbmap -option caps:escape
@@ -69,7 +64,7 @@ font pango: Ubuntu Mono, FontAwesome 12
 floating_modifier $sup
 
 ## start a terminal
-bindsym $sup+Return exec gnome-terminal
+bindsym $sup+Return exec lxterminal
 
 ## kill focused window
 bindsym $sup+Shift+q kill

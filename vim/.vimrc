@@ -3,6 +3,20 @@
 set nocompatible
 filetype off
 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'tomasr/molokai'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+call vundle#end()
 filetype plugin indent on
 " }}}
 " General {{{
@@ -86,9 +100,9 @@ set number              " Display line number
 set cursorline
 
 " colorscheme PaperColor
-colorscheme elflord
+colorscheme molokai
 " set background=dark
-" execute "set colorcolumn=" . join(range(81,110), ',')
+execute "set colorcolumn=" . join(range(81,110), ',')
 " }}}
 " Pluginin: ack.vim {{{
 if executable('ag')
@@ -131,7 +145,7 @@ endif
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 
-let g:airline_theme='papercolor'
+let g:airline_theme='wombat'
 " }}}
 " Pluginin: vim-jsx {{{
 let g:jsx_ext_required = 0

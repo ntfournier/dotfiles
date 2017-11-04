@@ -7,19 +7,6 @@ cd dotfiles
 stow -t ~ <folder>
 ```
 
-For Neovim
-
-```
-cd dotfiles
-stow -t ~/.config neovim
-```
-
-For Sudoers
-```
-sudo cp /home/ntfournier/Configs/dotfiles/sudoers/ntfournier /etc/sudoers.d/
-sudo chown root:root /etc/sudoers.d/ntfournier
-```
-
 ## Applications
 
 ### Git
