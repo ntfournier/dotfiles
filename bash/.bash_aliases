@@ -24,7 +24,7 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
 # Path for cd into directories
-CDPATH=.:~:~/Projects:~/Configs
+#CDPATH=.:~/Projects/nuance/sonic/:~/Projects/nuance/aurora
 
 # Fix small typos
 shopt -s cdspell
@@ -87,11 +87,20 @@ function d() {
 	psa)
 		docker ps -a | alt
 		;;
+	ps)
+		docker ps "${@:2}" | alt
+		;;
+	b)
+		docker build "${@:2}"
+		;;
 	e)
 		docker exec -it "${@:2}"
 		;;
 	eb)
 		docker exec -it "${@:2}" //bin/bash
+		;;
+	rd)
+		docker run -d "${@:2}"
 		;;
 	*)
 		docker "$@"
@@ -119,6 +128,9 @@ function dc() {
 	esac
 }
 
+## Git
+alias g='git'
+
 ## Kubernetes
 export PATH=~/Applications/:$PATH
 alias k='kubectl.exe'
@@ -133,10 +145,16 @@ alias nau='nautilus --no-desktop ./ &'
 export PATH=~/.npm-global/bin:$PATH
 
 ## Python
-alias sp3='source ~/.py36/bin/activate'
 alias sve='source ./venv/bin/activate'
-sp3
 
 ## Vim
 export VIMRC=~/.vimrc
 
+#GIT_PROMPT_ONLY_IN_REPO=1
+#source ~/Configs/.bash-git-prompt/gitprompt.sh
+
+alias last='history | head -n-1 | tail -10'
+
+function listHistResults {
+	history | grep "$1" | head -n-1 | tail -10
+}

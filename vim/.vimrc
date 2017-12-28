@@ -16,6 +16,12 @@ Plugin 'tomasr/molokai'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'airblade/vim-gitgutter'
+
+Plugin 'NLKNguyen/papercolor-theme'
+
+Plugin 'kien/ctrlp.vim'
+
 call vundle#end()
 filetype plugin indent on
 " }}}
@@ -31,12 +37,24 @@ set secure
 nmap j gj
 nmap k gk
 
+function MapToggle(key, opt)
+	let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
+	exec 'nnoremap '.a:key.' '.cmd
+	exec 'inoremap '.a:key." \<C-O>".cmd
+endfunction
+command -nargs=+ MapToggle call MapToggle(<f-args>)
+
+MapToggle <F2> wrap
+MapToggle <F3> list
+
 let mapleader = "\<Space>" " Remap leader to something easy to hit
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
 
 set dictionary-=/usr/share/dict/american-english dictionary+=/usr/share/dict/american-english
+
+set guifont=Anonymous\ Pro\ for\ Powerline\ 16
 " }}}
 " Buffers {{{
 
@@ -50,13 +68,22 @@ nnoremap gT :bp<CR>
 nnoremap gp :bp<CR>
 nnoremap gn :bn<CR>
 
-nnoremap <C-S-tab> :bp<CR>
-nnoremap <C-tab> :bn<CR>
+"nnoremap <C-S-tab> :bp<CR>
+"nnoremap <C-tab> :bn<CR>
 
 nnoremap gl :ls<CR>
 nnoremap gb :ls<CR>:b
 
 nnoremap <C-t> :tabnew<CR>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
+
 " }}}
 " Files, backups and undo {{{
 set nobackup
@@ -75,9 +102,7 @@ nmap <leader>q :nohlsearch<CR>
 map <C-s> :w<CR>
 
 " Toggle spell check
-nmap <F3> :setlocal spell! spelllang=en_us<CR>
-
-set pastetoggle=<F2>
+nmap <F8> :setlocal spell! spelllang=en_us<CR>
 
 nnoremap <leader>ev :e $VIMRC<CR>
 nnoremap <leader>sv :source $VIMRC<CR>
@@ -99,8 +124,9 @@ syntax enable           " Enable syntax highlighting
 set number              " Display line number
 set cursorline
 
-" colorscheme PaperColor
-colorscheme molokai
+set background=light
+colorscheme PaperColor
+"colorscheme molokai
 " set background=dark
 execute "set colorcolumn=" . join(range(81,110), ',')
 " }}}
@@ -115,7 +141,7 @@ nnoremap <Leader>o :CtrlP<CR>
 let g:ctrlp_custom_ignore = 'dist\|build\|node_modules\|bower_components\|.git\'
 " }}}
 " Pluginin: Git-gutter {{{
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 highlight clear SignColumn
 
 nmap <leader>] <Plugin>GitGutterNextHunk
