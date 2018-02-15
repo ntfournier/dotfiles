@@ -125,22 +125,21 @@ set number              " Display line number
 set cursorline
 
 set background=light
-colorscheme PaperColor
-"colorscheme molokai
+colorscheme molokai
 " set background=dark
 execute "set colorcolumn=" . join(range(81,110), ',')
 " }}}
-" Pluginin: ack.vim {{{
+" Plugin: ack.vim {{{
 if executable('ag')
 	let g:ackprg = 'ag --vimgrep'
 endif
 " }}}
-" Pluginin: CtrlP {{{
+" Plugin: CtrlP {{{
 nnoremap <Leader>o :CtrlP<CR>
 
 let g:ctrlp_custom_ignore = 'dist\|build\|node_modules\|bower_components\|.git\'
 " }}}
-" Pluginin: Git-gutter {{{
+" Plugin: Git-gutter {{{
 set signcolumn=yes
 highlight clear SignColumn
 
@@ -152,7 +151,7 @@ nmap <Leader>hu <Plugin>GitGutterRevertHunk
 nmap <Leader>hr <Plugin>GitGutterUndoHunk
 
 " }}}
-" Pluginin: Incsearch {{{
+" Plugin: Incsearch {{{
 let g:incsearch#auto_nohlsearch = 1
 
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
@@ -160,10 +159,10 @@ nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 " map ?  <Plugin>(incsearch-backward)
 " map g/ <Plugin>(incsearch-stay)
 " }}}
-" Pluginin: NerdTree {{{
+" Plugin: NerdTree {{{
 map <C-n> :NERDTreeToggle<CR>
 " }}}
-" Pluginin: vim-airline {{{
+" Plugin: vim-airline {{{
 let g:airline_powerline_fonts = 0
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
@@ -173,7 +172,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 let g:airline_theme='wombat'
 " }}}
-" Pluginin: vim-jsx {{{
+" Plugin: vim-jsx {{{
 let g:jsx_ext_required = 0
 " }}}
 " vim:foldmethod=marker:foldlevel=0

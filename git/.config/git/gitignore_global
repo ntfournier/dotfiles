@@ -12,13 +12,7 @@
 env/
 venv/
 
-wallaby.js
-
+# VS Code
 .vscode/
-
-# Nuance
-black/
-tmp/
-myApp/
 
 *.zip/
