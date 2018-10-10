@@ -13,6 +13,8 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'tomasr/molokai'
 
+Plugin 'mileszs/ack.vim'
+
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -20,7 +22,9 @@ Plugin 'airblade/vim-gitgutter'
 
 Plugin 'NLKNguyen/papercolor-theme'
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -54,7 +58,7 @@ inoremap <silent> <C-S>         <C-O>:update<CR>
 
 set dictionary-=/usr/share/dict/american-english dictionary+=/usr/share/dict/american-english
 
-set guifont=Anonymous\ Pro\ for\ Powerline\ 16
+set guifont=Hack\ Regular\ 12
 " }}}
 " Buffers {{{
 
@@ -113,11 +117,26 @@ cnoremap w!! w !sudo tee > /dev/null %
 " Text, tabulation and indent related {{{
 set list
 set listchars=tab:\|\ ,trail:~
+set fileformat=unix
 
 set foldenable
 set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=indent
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=120 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 " }}}
 " UI and Colors {{{
 syntax enable           " Enable syntax highlighting
@@ -125,9 +144,8 @@ set number              " Display line number
 set cursorline
 
 set background=light
-colorscheme molokai
-" set background=dark
-execute "set colorcolumn=" . join(range(81,110), ',')
+colorscheme PaperColor
+execute "set colorcolumn=" . join(range(81,120), ',')
 " }}}
 " Plugin: ack.vim {{{
 if executable('ag')
@@ -137,7 +155,12 @@ endif
 " Plugin: CtrlP {{{
 nnoremap <Leader>o :CtrlP<CR>
 
-let g:ctrlp_custom_ignore = 'dist\|build\|node_modules\|bower_components\|.git\'
+let g:ctrlp_custom_ignore = 'dist\|build\|node_modules\|bower_components\|.git\|.class'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 " }}}
 " Plugin: Git-gutter {{{
 set signcolumn=yes

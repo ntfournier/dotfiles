@@ -25,7 +25,7 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=20
 markup=none
 
 # Volume indicator
@@ -44,16 +44,20 @@ markup=none
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
+[kubectl]
+interval=100
+color=#00FFFF
+
 [memory]
 label=MEM
 separator=false
 interval=30
 
-# [memory]
-# label=SWAP
-# instance=swap
-# separator=false
-# interval=30
+[memory]
+label=SWAP
+instance=swap
+separator=false
+interval=30
 
 # Disk usage
 #
@@ -91,11 +95,11 @@ interval=5
 [cpu_usage]
 label=CPU
 interval=10
-min_width=CPU: 100.00%
+min_width= CPU: 100.00% 
 #separator=false
 
-#[load_average]
-#interval=10
+[load_average]
+interval=10
 
 # Battery indicator
 #

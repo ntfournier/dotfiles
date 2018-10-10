@@ -16,3 +16,12 @@ venv/
 .vscode/
 
 *.zip/
+
+# My Code files
+nt_*
+
+server/logs/*
+logs/*
+
+# Git patches
+*.patch 
