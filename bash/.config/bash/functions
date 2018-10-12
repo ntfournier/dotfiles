@@ -1,0 +1,129 @@
+
+
+# USAGE: d [docker cmd]
+# description: Docker -> d. Execute: `type d` in terminal to show other features
+function d() {
+    case $1 in
+    n)
+        docker network ls
+        ;;
+    ni)
+        docker network inspect "${@:2}"
+        ;;
+    rma)
+        echo "Deleting exited containers"
+        docker rm $(docker ps -qa --no-trunc --filter "status=exited")
+        ;;
+    rmiu)
+        docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+        ;;
+    psm)
+        docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}" | alt
+        ;;
+    p|psl)
+        docker ps --format "table {{.Names}}\t{{with join (split (printf \"%s\" .Ports) \"0.0.0.0:\") \"\"}}{{join (split . \"/tcp\") \"\"}}{{end}}\t{{.Status}}" | alt
+        ;;
+    psa)
+        docker ps -a | alt
+        ;;
+    ps)
+        docker ps "${@:2}" | alt
+        ;;
+    b)
+        docker build "${@:2}"
+        ;;
+    e)
+        docker exec -it "${@:2}"
+        ;;
+    l)
+        docker logs -f "${@:2}"
+        ;;
+    eb)
+        docker exec -it "${@:2}" //bin/bash
+        ;;
+    rd)
+        docker run -d "${@:2}"
+        ;;
+    v)
+        docker volume "${@:2}"
+        ;;
+    *)
+        docker "$@"
+        ;;
+    esac
+}
+
+# USAGE: dc [docker-compose cmd]
+# description: Docker-compose -> dc. Execute: `type dc` in terminal to show other features
+function dc() {
+    case $1 in
+    r)
+        docker-compose down && docker-compose up -d
+        ;;
+    b)
+        docker-compose build
+        ;;
+    k)
+        docker-compose kill
+        ;;
+    u)
+        docker-compose up -d
+        ;;
+    d)
+        docker-compose down
+        ;;
+    ul)
+        docker-compose up
+        ;;
+    *)
+        docker-compose "$@"
+        ;;
+    esac
+}
+
+##############################################################################
+# Kubernetes helpers
+##############################################################################
+
+# USAGE: k [kubectl cmd]
+# description: Kubectl -> k. Execute: `type k` in terminal to show other features
+function k() {
+    case $1 in
+    p)
+		kubectl get pods
+		;;
+	pw)
+		kubectl get pods -w
+		;;
+    eb)
+        kubectl exec -it "${@:2}" bash
+        ;;
+    cg)
+        kubectl config get-contexts
+        ;;
+    cu)
+        kubectl config use-context "${@:2}"
+        ;;
+    cc)
+        kubectl config current-context
+        ;;
+    g)
+        kubectl get "${@:2}"
+        ;;
+    pf)
+        kubectl port-forward "${@:2}"
+        ;;
+    *)
+        kubectl "$@"
+        ;;
+    esac
+}
+
+
+function save_command() {
+    tail -n 1 ~/.bash_history >> ~/.cmds
+    sort -n ~/.cmds | uniq > ~/.cmds_tmp
+    rm ~/.cmds
+    mv ~/.cmds_tmp ~/.cmds
+}
+
