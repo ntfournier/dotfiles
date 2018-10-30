@@ -16,10 +16,11 @@ shopt -s histappend
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND='history -a; history -c; history -r;'
 
-
 ################################################################################
 # COMMON UNIX HELPERS
 ################################################################################
+
+alias sb='source ~/.bashrc'
 
 # ls (mostly defaults from Ubuntu)
 alias ls='ls --color=auto --group-directories-first'
@@ -51,9 +52,10 @@ function alt() {
 ################################################################################
 # APPLICATIONS
 ################################################################################
+export APPS=/home/ntfournier/Applications
 
 ## Android
-export ANDROID_HOME=/home/ntfournier/Applications/Android/Sdk/
+export ANDROID_HOME=$APPS/Android/Sdk/
 
 ## Apt
 alias ai='sudo apt install'
@@ -64,17 +66,20 @@ export BAT_THEME="GitHub"
 
 ## Git
 alias g='git'
+alias gs='git status'
 
 source /usr/share/bash-completion/completions/git
 __git_complete g _git  # Enable auto complete for 'g' alias
 
 ## Java
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
-export PATH=~/Applications/maven/bin/:$PATH
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+export PATH=$JAVA_HOME/bin:$PATH
+export PATH=$APPS/maven/bin/:$PATH
 
-alias pmd="~/Applications/pmd-bin-6.3.0/bin/run.sh pmd"
+alias pmd="~/Applications/pmd-bin-6.8.0/bin/run.sh pmd"
 
 ## Kubernetes
+export PATH=$APPS/:$PATH
 source <(kubectl completion bash)
 
 ## NPM
@@ -84,8 +89,11 @@ export PATH=~/.config/npm-global/bin:$PATH
 alias pg_cli='pgcli'
 
 ## Python
-source ~/.config/python36/bin/activate
 alias sve='source ./venv/bin/activate'
+
+VIRTUAL_ENV="/home/ntfournier/.config/python36"
+export VIRTUAL_ENV
+export PATH="$VIRTUAL_ENV/bin:$PATH"
 
 ## Ranger
 # alias ranger='ranger --choosedir=$HOME/.config/ranger/last_dir; LASTDIR=`cat $HOME/.config/ranger/last_dir`; cd "$LASTDIR"'
@@ -104,4 +112,5 @@ export PATH="~/.config/yarn-global/node_modules/.bin:$PATH"
 source ~/.config/bash/functions
 source ~/.config/bash/prompt.sh
 
+source ~/.config/private/aliases
 
